@@ -8,10 +8,16 @@ It's also a fun example of using SDL with Pascal.
 ## History
 
 The initial developer of this Pascal code is Luca "MADrigal" Antignano (lucantignano@gmail.com).
-
 You may retrieve the original version of the code at 
 https://code.google.com/archive/p/dsp-emulator/downloads?page=2.
 This code was released on March 8, 2012 by [Leniad](https://github.com/leniad).
+
+## Required libraries
+
+To run parachute.exe program, SDL2.dll and SDL2_mixer.dll are required.
+See the URLs below to find out where to download them.
+Download the 2 .zip files and extract these 2 dll into the same directory as the .exe file.
+Depending on your compilation target, you will choose the 32 or 64 bit version.
 
 ## Third-party
 
