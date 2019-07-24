@@ -7,8 +7,9 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Unit1, splash, about, Manual
-  { you can add units after this };
+  Forms, Unit1, splash, about, Manual,
+  sdl2 in '..\SDL2\sdl2.pas',
+  sdl2_mixer in '..\SDL2\sdl2_mixer.pas';
 
 {$R *.res}
 

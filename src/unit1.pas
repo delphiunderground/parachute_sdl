@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Registry,sdl,sdl_mixer;
+  Registry,sdl2,sdl2_mixer;
 
 type
 

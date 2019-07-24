@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   Menus,StdCtrls,
   {$ifdef linux}LCLIntf,{$ENDIF}
-  {$IFDEF WINDOWS}windows,{$ENDIF}about,sdl,sdl_mixer,manual;
+  {$IFDEF WINDOWS}windows,{$ENDIF}about,sdl2,sdl2_mixer,manual;
 
 type
 
@@ -93,7 +93,7 @@ begin
     bSound:=false;
   end else begin
       //Open Audio...
-      if (Mix_OpenAudio(44100, AUDIO_S16SYS, 1, 4096)<>0) then begin
+      if (Mix_OpenAudio(44100, AUDIO_S16, 1, 4096)<>0) then begin
         SDL_Quit();
         bSound:=false;
       end;
