@@ -1,14 +1,12 @@
 unit splash;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Menus,StdCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Menus, StdCtrls,
   {$ifdef linux}LCLIntf,{$ENDIF}
-  {$IFDEF WINDOWS}windows,{$ENDIF}about,sdl2,sdl2_mixer,manual;
+  about, sdl2, sdl2_mixer, manual;
 
 type
 
@@ -58,7 +56,13 @@ var
   SplashForm: TSplashForm;
 
 implementation
-uses unit1;
+
+uses
+  {$IFDEF FPC}
+  LCLType,
+  {$ENDIF}
+  Windows,
+  unit1;
 
 { TSplashForm }
 
@@ -179,5 +183,3 @@ begin
 end;
 
 end.
-
-

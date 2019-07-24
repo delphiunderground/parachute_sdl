@@ -40,7 +40,7 @@
     </RequiredPackages>
     <Units Count="5">
       <Unit0>
-        <Filename Value="parachute.lpr"/>
+        <Filename Value="parachute.dpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="parachute"/>
       </Unit0>

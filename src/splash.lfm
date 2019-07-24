@@ -14,8 +14,6 @@ object SplashForm: TSplashForm
   ParentBiDiMode = False
   PopupMode = pmAuto
   Position = poScreenCenter
-  ShowInTaskBar = stNever
-  LCLVersion = '0.9.31'
   Visible = True
   object im_box_picture: TImage
     Left = 38

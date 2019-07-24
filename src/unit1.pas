@@ -14,13 +14,11 @@
 
 unit Unit1;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Registry,sdl2,sdl2_mixer;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Registry, sdl2, sdl2_mixer;
 
 type
 
@@ -181,10 +179,6 @@ const
       iGameSpeedNormal=200;
       // milliseconds between a rescue and next skydiver move
       iGameSpeedDelayed=320;
-      VK_RETURN=13;
-      VK_ESCAPE=27;
-      VK_LEFT = 37;
-      VK_RIGHT = 39;
 
 var
   Form1             :TForm1;
@@ -256,6 +250,14 @@ var
   iDemoPosMan:array[1..4] of integer;
 
 implementation
+
+uses
+  {$IFDEF FPC}
+  LCLType;
+  {$ELSE}
+  Windows;
+  {$ENDIF}
+
 {$R *.lfm}
 
 { **************************************************************************** }

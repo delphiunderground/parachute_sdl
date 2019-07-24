@@ -19,7 +19,6 @@ object Form1: TForm1
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   PopupMenu = SplashForm.pm_0_menu
-  LCLVersion = '0.9.31'
   Visible = True
   object im_base: TImage
     Left = 0

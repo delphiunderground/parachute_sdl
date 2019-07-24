@@ -1,11 +1,9 @@
 unit Manual;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls;
 
 type
 
@@ -65,7 +63,13 @@ var
   iActivePage:      integer;                                                    // currently displayed page
 
 implementation
-uses unit1;
+//uses unit1;
+uses
+  {$IFDEF FPC}
+  LCLType;
+  {$ELSE}
+  Windows;
+  {$ENDIF}
 
 {$R *.lfm}
 
@@ -231,4 +235,3 @@ initialization
   iActivePage:=1;
 
 end.
-

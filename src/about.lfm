@@ -10,7 +10,6 @@ object AboutForm: TAboutForm
   ClientWidth = 281
   Color = clBlack
   OnKeyDown = FormKeyDown
-  LCLVersion = '0.9.31'
   object la_mybirthdate1: TLabel
     Left = 16
     Height = 14

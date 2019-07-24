@@ -13,7 +13,6 @@ object ManualForm: TManualForm
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   OnShow = FormShow
-  LCLVersion = '0.9.31'
   object im_page_08: TImage
     Left = 0
     Height = 230

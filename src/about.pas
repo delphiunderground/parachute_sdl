@@ -1,12 +1,9 @@
 unit about;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 type
 
@@ -36,7 +33,13 @@ var
   AboutForm: TAboutForm;
 
 implementation
-uses unit1;
+
+uses
+  {$IFDEF FPC}
+  LCLType;
+  {$ELSE}
+  Windows;
+  {$ENDIF}
 
 {$R *.lfm}
 
@@ -49,4 +52,3 @@ begin
 end;
 
 end.
-
