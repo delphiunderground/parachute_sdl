@@ -64,6 +64,9 @@ uses
   Windows,
   unit1;
 
+const
+  DirSound='../Sound/';
+
 { TSplashForm }
 
 {$R *.lfm}
@@ -105,13 +108,13 @@ begin
   //samples initialization
   if bSound then begin
       //Load Samples..
-      pf_chance:=Mix_LoadWAV('Sound/Chance.wav');
-      pf_got:=   Mix_LoadWAV('Sound/Got.wav');
-      pf_miss1:= Mix_LoadWAV('Sound/Miss1.wav');
-      pf_miss2:= Mix_LoadWAV('Sound/Miss2.wav');
-      pf_miss3:= Mix_LoadWAV('Sound/Miss3.wav');
-      pf_tick:=  Mix_LoadWAV('Sound/Tick.wav');
-      pf_alarm:= Mix_LoadWAV('Sound/Alarm.wav');
+      pf_chance:=Mix_LoadWAV(DirSound+'Chance.wav');
+      pf_got:=   Mix_LoadWAV(DirSound+'Got.wav');
+      pf_miss1:= Mix_LoadWAV(DirSound+'Miss1.wav');
+      pf_miss2:= Mix_LoadWAV(DirSound+'Miss2.wav');
+      pf_miss3:= Mix_LoadWAV(DirSound+'Miss3.wav');
+      pf_tick:=  Mix_LoadWAV(DirSound+'Tick.wav');
+      pf_alarm:= Mix_LoadWAV(DirSound+'Alarm.wav');
       if ((pf_chance=nil) or (pf_got=nil) or (pf_miss1=nil) or (pf_miss2=nil) or (pf_miss3=nil) or (pf_tick=nil) or (pf_alarm=nil)) then begin
           MessageDlg('Sound folder unproperly installed. Please read instructions, changed to ''No Sound''.', mtError, [mbOK], 0);
           bSound:=false;
