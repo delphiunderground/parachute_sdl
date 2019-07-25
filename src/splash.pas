@@ -69,7 +69,7 @@ const
 
 { TSplashForm }
 
-{$R *.lfm}
+{$R *.dfm}
 
 procedure TSplashForm.la_emailClick(Sender:TObject);
 begin

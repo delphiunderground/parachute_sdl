@@ -41,7 +41,7 @@ uses
   Windows;
   {$ENDIF}
 
-{$R *.lfm}
+{$R *.dfm}
 
 { TAboutForm }
 

@@ -63,7 +63,7 @@ var
   iActivePage:      integer;                                                    // currently displayed page
 
 implementation
-//uses unit1;
+
 uses
   {$IFDEF FPC}
   LCLType;
@@ -71,7 +71,7 @@ uses
   Windows;
   {$ENDIF}
 
-{$R *.lfm}
+{$R *.dfm}
 
 procedure TManualForm.FormCreate(Sender: TObject);
 begin
