@@ -1,0 +1,23 @@
+Enhanced Version 1.0
+
+- Added alarm, you can change alarm our, added alarm sounds and alarm button. Alarm time is recorded like hiscore.
+- Added demo play
+- Ported to Lazarus/FPC
+- Change sound system to SDL sound library
+- Auto detect sound
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+September 15th, 2008 - Release S4/1.03 (Standard 4, graphics improvement)
+Added "double buffering" to form rendering, in order to remove graphics
+flickering.
+
+December 31st, 2007 - Release S4/1.02 (Standard 4, graphics improvement +
+hiscore save fix)
+Fixed a bug in the routine that saves hiscores to Windows registry; added
+shadows to sprites, to give a more realistic look; replaced a couple of wrong
+sprites.
+
+November 12th, 2007 - Release S4/1.01 (Standard 4, MAME cabinets compatible)
+Added new options to completely operate the simulator through keyboard, as
+requested by MAME cabinets users.
