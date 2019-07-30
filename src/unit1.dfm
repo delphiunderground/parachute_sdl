@@ -18,8 +18,59 @@ object Form1: TForm1
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
-  PopupMenu = SplashForm.pm_0_menu
+  PopupMenu = pm_0_menu
   Visible = True
+  object pm_0_menu: TPopupMenu
+    left = 10
+    top = 10
+    object MenuItem1: TMenuItem
+      Caption = 'About...'
+      ShortCut = 112
+      OnClick = pm_1_aboutClick
+    end
+    object MenuItem11: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'View ''Readme.txt'''
+      ShortCut = 113
+      OnClick = pm_3_readmeClick
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'View ''Whatsnew.txt'''
+      ShortCut = 114
+      OnClick = pm_4_whatsnewClick
+    end
+    object MenuItem5: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'View manual'
+      ShortCut = 115
+      OnClick = pm_6_manualClick
+    end
+    object MenuItem7: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Reset Hiscores'
+      ShortCut = 116
+      OnClick = pm_8_hiscoreClick
+    end
+    object MenuItem12: TMenuItem
+      Caption = 'Mute Audio'
+      ShortCut = 117
+      OnClick = pm_12_muteaudioClick
+    end
+    object MenuItem9: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem10: TMenuItem
+      Caption = 'Exit'
+      ShortCut = 27
+      OnClick = pm_10_exitClick
+    end
+  end
   object im_base: TImage
     Left = 0
     Height = 395

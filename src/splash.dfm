@@ -10,7 +10,6 @@ object SplashForm: TSplashForm
   ClientWidth = 286
   Color = clBlack
   FormStyle = fsStayOnTop
-  OnKeyDown = FormKeyDown
   ParentBiDiMode = False
   PopupMode = pmAuto
   Position = poScreenCenter
@@ -822,6 +821,7 @@ object SplashForm: TSplashForm
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     OnClick = btn_playClick
+    OnKeyDown = FormKeyDown
     ParentFont = False
     TabOrder = 0
   end
@@ -854,56 +854,5 @@ object SplashForm: TSplashForm
     Font.Name = 'Arial'
     ParentColor = False
     ParentFont = False
-  end
-  object pm_0_menu: TPopupMenu
-    left = 10
-    top = 10
-    object MenuItem1: TMenuItem
-      Caption = 'About...'
-      ShortCut = 112
-      OnClick = pm_1_aboutClick
-    end
-    object MenuItem11: TMenuItem
-      Caption = '-'
-    end
-    object MenuItem3: TMenuItem
-      Caption = 'View ''Readme.txt'''
-      ShortCut = 113
-      OnClick = pm_3_readmeClick
-    end
-    object MenuItem4: TMenuItem
-      Caption = 'View ''Whatsnew.txt'''
-      ShortCut = 114
-      OnClick = pm_4_whatsnewClick
-    end
-    object MenuItem5: TMenuItem
-      Caption = '-'
-    end
-    object MenuItem6: TMenuItem
-      Caption = 'View manual'
-      ShortCut = 115
-      OnClick = pm_6_manualClick
-    end
-    object MenuItem7: TMenuItem
-      Caption = '-'
-    end
-    object MenuItem8: TMenuItem
-      Caption = 'Reset Hiscores'
-      ShortCut = 116
-      OnClick = pm_8_hiscoreClick
-    end
-    object MenuItem12: TMenuItem
-      Caption = 'Mute Audio'
-      ShortCut = 117
-      OnClick = pm_12_muteaudioClick
-    end
-    object MenuItem9: TMenuItem
-      Caption = '-'
-    end
-    object MenuItem10: TMenuItem
-      Caption = 'Exit'
-      ShortCut = 27
-      OnClick = pm_10_exitClick
-    end
   end
 end

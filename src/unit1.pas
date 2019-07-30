@@ -18,13 +18,25 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Registry, sdl2, sdl2_mixer;
+  Menus, Registry, sdl2, sdl2_mixer;
 
 type
 
   { TForm1 }
 
   TForm1 = class(TForm)
+    MenuItem1: TMenuItem;
+    MenuItem10: TMenuItem;
+    MenuItem11: TMenuItem;
+    MenuItem12: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
+    pm_0_menu: TPopupMenu;
     btn_acl: TImage;
     btn_alarm: TImage;
     btn_game_a: TImage;
@@ -111,6 +123,14 @@ type
     timer_game: TTimer;
     timer_game_over: TTimer;
     timer_miss: TTimer;
+    { * POPUP MENU                                                               * }
+    procedure pm_1_aboutClick(Sender:   TObject);
+    procedure pm_3_readmeClick(Sender:  TObject);
+    procedure pm_4_whatsnewClick(Sender:TObject);
+    procedure pm_6_manualClick(Sender:  TObject);
+    procedure pm_8_hiscoreClick(Sender: TObject);
+    procedure pm_10_exitClick(Sender:   TObject);
+    procedure pm_12_muteaudioClick(Sender:TObject);
     { * PROCEDURES: INITIALIZE & SHUT DOWN                                       * }
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -253,12 +273,61 @@ implementation
 
 uses
   {$IFDEF FPC}
-  LCLType;
-  {$ELSE}
-  Windows;
+  LCLType,
   {$ENDIF}
+  Windows,
+  about, manual;
 
 {$R *.dfm}
+
+{ **************************************************************************** }
+{ * POPUP MENU                                                               * }
+{ **************************************************************************** }
+
+procedure TForm1.pm_1_aboutClick(Sender:TObject);
+begin
+  AboutForm.Show;
+end;
+
+procedure TForm1.pm_3_readmeClick(Sender:TObject);
+begin
+  {$IFDEF WINDOWS}
+  ShellExecute(Handle,'open','./Readme.txt',nil,'',SW_SHOWNORMAL);
+  {$ENDIF}
+end;
+
+procedure TForm1.pm_4_whatsnewClick(Sender:TObject);
+begin
+  {$IFDEF WINDOWS}
+  ShellExecute(Handle,'open','./Whatsnew.txt',nil,'',SW_SHOWNORMAL);
+  {$ENDIF}
+end;
+
+procedure TForm1.pm_6_manualClick(Sender:TObject);
+begin
+  ManualForm.Show;
+end;
+
+procedure TForm1.pm_8_hiscoreClick(Sender:TObject);
+begin
+  iHiscoreA:=0;
+  RIF_Registry.WriteInteger('', 'HiscoreA_E', iHiscoreA);
+  iHiscoreB:=0;
+  RIF_Registry.WriteInteger('', 'HiscoreB_E', iHiscoreB);
+  //Beep;
+end;
+
+procedure TForm1.pm_12_muteaudioClick(Sender:TObject);
+begin
+  bSoundMute:=not(bSoundMute);
+  if not(bSoundMute) then Snd_Silence;
+end;
+
+procedure TForm1.pm_10_exitClick(Sender:TObject);
+begin
+  close;
+  //Application.Terminate;
+end;
 
 { **************************************************************************** }
 { *                                                                          * }

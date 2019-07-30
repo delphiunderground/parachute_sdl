@@ -3,10 +3,9 @@ unit splash;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Menus, StdCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   {$ifdef linux}LCLIntf,{$ENDIF}
-  about, sdl2, sdl2_mixer, manual;
+  sdl2, sdl2_mixer;
 
 type
 
@@ -22,30 +21,10 @@ type
     la_release_date: TLabel;
     la_ported: TLabel;
     la_version: TLabel;
-    MenuItem1: TMenuItem;
-    MenuItem10: TMenuItem;
-    MenuItem11: TMenuItem;
-    MenuItem12: TMenuItem;
-    MenuItem3: TMenuItem;
-    MenuItem4: TMenuItem;
-    MenuItem5: TMenuItem;
-    MenuItem6: TMenuItem;
-    MenuItem7: TMenuItem;
-    MenuItem8: TMenuItem;
-    MenuItem9: TMenuItem;
-    pm_0_menu: TPopupMenu;
-    { * POPUP MENU                                                               * }
     procedure btn_playClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure la_emailClick(Sender: TObject);
     procedure la_httpClick(Sender: TObject);
-    procedure pm_1_aboutClick(Sender:   TObject);
-    procedure pm_3_readmeClick(Sender:  TObject);
-    procedure pm_4_whatsnewClick(Sender:TObject);
-    procedure pm_6_manualClick(Sender:  TObject);
-    procedure pm_8_hiscoreClick(Sender: TObject);
-    procedure pm_10_exitClick(Sender:   TObject);
-    procedure pm_12_muteaudioClick(Sender:TObject);
   private
     { private declarations }
   public
@@ -132,57 +111,9 @@ end;
 procedure TSplashForm.FormKeyDown(Sender: TObject; var Key: Word;Shift: TShiftState);
 begin
   //'1' or 'ENTER' keys
-  if ((key=$31) or (key=VK_RETURN)) and btn_Play.enabled then btn_playClick(Splashform);
+  if ((key=$31) or (key=VK_RETURN)) and btn_Play.enabled then btn_playClick(Sender);
   // 'ESC' key
   if key=VK_ESCAPE then Application.Terminate;
-end;
-
-{ **************************************************************************** }
-{ * POPUP MENU                                                               * }
-{ **************************************************************************** }
-procedure TSplashForm.pm_1_aboutClick(Sender:TObject);
-begin
-  AboutForm.Show;
-end;
-
-procedure TSplashForm.pm_3_readmeClick(Sender:TObject);
-begin
-  {$IFDEF WINDOWS}
-  ShellExecute(Handle,'open','./Readme.txt',nil,'',SW_SHOWNORMAL);
-  {$ENDIF}
-end;
-
-procedure TSplashForm.pm_4_whatsnewClick(Sender:TObject);
-begin
-  {$IFDEF WINDOWS}
-  ShellExecute(Handle,'open','./Whatsnew.txt',nil,'',SW_SHOWNORMAL);
-  {$ENDIF}
-end;
-
-procedure TSplashForm.pm_6_manualClick(Sender:TObject);
-begin
-  ManualForm.Show;
-end;
-
-procedure TSplashForm.pm_8_hiscoreClick(Sender:TObject);
-begin
-  iHiscoreA:=0;
-  RIF_Registry.WriteInteger('', 'HiscoreA_E', iHiscoreA);
-  iHiscoreB:=0;
-  RIF_Registry.WriteInteger('', 'HiscoreB_E', iHiscoreB);
-  //Beep;
-end;
-
-procedure TSplashForm.pm_12_muteaudioClick(Sender:TObject);
-begin
-  bSoundMute:=not(bSoundMute);
-  if not(bSoundMute) then form1.Snd_Silence;
-end;
-
-procedure TSplashForm.pm_10_exitClick(Sender:TObject);
-begin
-  form1.close;
-  Application.Terminate;
 end;
 
 end.
