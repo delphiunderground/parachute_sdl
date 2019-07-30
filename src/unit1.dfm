@@ -32,12 +32,12 @@ object Form1: TForm1
       Caption = '-'
     end
     object MenuItem3: TMenuItem
-      Caption = 'View ''Readme.txt'''
+      Caption = 'View ''readme_legacy.txt'''
       ShortCut = 113
       OnClick = pm_3_readmeClick
     end
     object MenuItem4: TMenuItem
-      Caption = 'View ''Whatsnew.txt'''
+      Caption = 'View ''whatsnew_legacy.txt'''
       ShortCut = 114
       OnClick = pm_4_whatsnewClick
     end

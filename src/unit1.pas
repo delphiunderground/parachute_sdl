@@ -117,7 +117,6 @@ type
     im_time_semicolon: TImage;
     Timer_alarm_clock: TTimer;
     Timer_alarm_ring: TTimer;
-    timer_chance: TTimer;
     Timer_Chance_Time: TTimer;
     timer_clock: TTimer;
     timer_game: TTimer;
@@ -274,9 +273,14 @@ implementation
 uses
   {$IFDEF FPC}
   LCLType,
+  {$ELSE}
+  shellapi,
   {$ENDIF}
   Windows,
   about, manual;
+
+const
+  DirDoc='.\';
 
 {$R *.dfm}
 
@@ -291,15 +295,15 @@ end;
 
 procedure TForm1.pm_3_readmeClick(Sender:TObject);
 begin
-  {$IFDEF WINDOWS}
-  ShellExecute(Handle,'open','./Readme.txt',nil,'',SW_SHOWNORMAL);
+  {$IFNDEF LINUX}
+  ShellExecute(Handle,'open',DirDoc+'readme_legacy.txt',nil,'',SW_SHOWNORMAL);
   {$ENDIF}
 end;
 
 procedure TForm1.pm_4_whatsnewClick(Sender:TObject);
 begin
-  {$IFDEF WINDOWS}
-  ShellExecute(Handle,'open','./Whatsnew.txt',nil,'',SW_SHOWNORMAL);
+  {$IFNDEF LINUX}
+  ShellExecute(Handle,'open',DirDoc+'whatsnew_legacy.txt',nil,'',SW_SHOWNORMAL);
   {$ENDIF}
 end;
 
@@ -326,7 +330,6 @@ end;
 procedure TForm1.pm_10_exitClick(Sender:TObject);
 begin
   close;
-  //Application.Terminate;
 end;
 
 { **************************************************************************** }
