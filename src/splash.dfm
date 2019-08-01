@@ -1,26 +1,34 @@
 object SplashForm: TSplashForm
   Left = 381
-  Height = 333
   Top = 140
-  Width = 286
+  BiDiMode = bdLeftToRight
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'About this game...'
   ClientHeight = 333
   ClientWidth = 286
   Color = clBlack
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   FormStyle = fsStayOnTop
+  OldCreateOrder = True
   ParentBiDiMode = False
   PopupMode = pmAuto
   Position = poScreenCenter
   Visible = True
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
   object im_box_picture: TImage
     Left = 38
-    Height = 111
     Top = 59
     Width = 209
+    Height = 111
     Picture.Data = {
-      0A544A706567496D61676521570000FFD8FFE000104A46494600010201006000
+      0A544A504547496D61676521570000FFD8FFE000104A46494600010201006000
       600000FFC0001108006F00D103011100021101031101FFDB0084000101010101
       010101010102010102020402020202020504040304060507060605060607080A
       0807070A070606090C090A0A0B0B0B0B07080D0D0C0B0D0A0B0B0B0101020202
@@ -717,18 +725,18 @@ object SplashForm: TSplashForm
       96D222CBA6C11E9FE2081A3F2ADD2E2373950260BFCC1C76FF003C544A549EEC
       576DD8DAB4D42E23661230476FBCA79FE581D7FF00D55CEA314F51B4D3BF43A0
       B5863951A7446322727017903DCD26AEF9589AB46E8CBFEC2BEFF9F2B4FF00C0
-      86FF00E22BAB9D799CD65FCBF89FFFD9
-    }
+      86FF00E22BAB9D799CD65FCBF89FFFD9}
   end
   object la_game_title: TLabel
     Left = 11
-    Height = 15
     Top = 16
     Width = 257
+    Height = 15
     Alignment = taCenter
     AutoSize = False
     Caption = 'Parachute (Nintendo, Wide Screen) Simulator'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -12
     Font.Name = 'Arial'
@@ -738,13 +746,14 @@ object SplashForm: TSplashForm
   end
   object la_version: TLabel
     Left = 91
-    Height = 15
     Top = 32
     Width = 97
+    Height = 15
     Alignment = taCenter
     AutoSize = False
     Caption = 'Version E4/1.00'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -12
     Font.Name = 'Arial'
@@ -754,51 +763,32 @@ object SplashForm: TSplashForm
   end
   object la_release_date: TLabel
     Left = 19
-    Height = 14
     Top = 176
     Width = 241
+    Height = 14
     Alignment = taCenter
     AutoSize = False
     Caption = 'Released by MADrigal on September 15th, 2008'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
-  end
-  object la_email: TLabel
-    Cursor = crHandPoint
-    Left = 19
-    Height = 15
-    Top = 256
-    Width = 241
-    Alignment = taCenter
-    AutoSize = False
-    Caption = 'mailto:lucantignano@gmail.com'
-    Color = clBlack
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = 8454143
-    Font.Height = -12
-    Font.Name = 'Arial'
-    Font.Style = [fsUnderline]
-    ParentColor = False
-    ParentFont = False
-    ParentShowHint = False
-    Transparent = False
-    OnClick = la_emailClick
   end
   object la_http: TLabel
-    Cursor = crHandPoint
     Left = 19
-    Height = 15
-    Top = 232
+    Top = 244
     Width = 241
+    Height = 15
+    Cursor = crHandPoint
     Alignment = taCenter
     AutoSize = False
-    Caption = 'http://www.madrigaldesign.it/sim/'
+    Caption = 'https://github.com/delphiunderground'
     Color = clBlack
-    Font.CharSet = ANSI_CHARSET
+    Font.Charset = ANSI_CHARSET
     Font.Color = 8454143
     Font.Height = -12
     Font.Name = 'Arial'
@@ -806,53 +796,76 @@ object SplashForm: TSplashForm
     ParentColor = False
     ParentFont = False
     ParentShowHint = False
+    ShowHint = False
     Transparent = False
     OnClick = la_httpClick
   end
-  object btn_play: TButton
-    Cursor = crHandPoint
-    Left = 104
-    Height = 25
-    Top = 288
-    Width = 72
-    Caption = '- PLAY -'
-    Font.Color = cl3DLight
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    OnClick = btn_playClick
-    OnKeyDown = FormKeyDown
-    ParentFont = False
-    TabOrder = 0
-  end
   object la_ported: TLabel
     Left = 1
-    Height = 14
     Top = 192
     Width = 285
+    Height = 14
     Alignment = taCenter
     AutoSize = False
     Caption = 'Ported to FreePascal && added Enhanced Functions'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
   end
   object la_ported1: TLabel
     Left = 1
-    Height = 14
     Top = 202
     Width = 285
+    Height = 14
     Alignment = taCenter
     AutoSize = False
     Caption = 'by LENIAD on March 8th, 2012'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
+  end
+  object la_ported2: TLabel
+    Left = 1
+    Top = 230
+    Width = 285
+    Height = 14
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'This source code is hosted at '
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object btn_play: TButton
+    Left = 104
+    Top = 288
+    Width = 72
+    Height = 25
+    Cursor = crHandPoint
+    Caption = '- PLAY -'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = cl3DLight
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    OnClick = btn_playClick
+    OnKeyDown = FormKeyDown
   end
 end

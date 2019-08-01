@@ -1,16 +1,20 @@
-{ **************************************************************************** }
-{ *                                                                          * }
-{ * PARACHUTE (Nintendo, Wide Screen) Simulator                              * }
-{ * by Luca "MADrigal" Antignano, October 2007 (revision: January 2012)      * }
-{ *                                                                          * }
-{ * http://www.madrigaldesign.it/sim/                                        * }
-{ * lucantignano@gmail.com                                                   * }
-{ *                                                                          * }
-{ * This source code is "open source". You are allowed to use it at your     * }
-{ * will, but please always credit and mention me in case you release a      * }
-{ * handheld simulator, and use parts of this source code. Thanks.           * }
-{ *                                                                          * }
-{ **************************************************************************** }
+(*
+ * This file is part of the parachute_sdl program.
+ * https://github.com/delphiunderground/parachute_sdl
+ * Copyright (C) 2019 DelphiUnderground <delphiunderground@outlook.be>.
+ *
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version
+ * 3.0 as published by the Free Software Foundation.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this software; if not, see <https://www.gnu.org/licenses/>.
+ *)
 
 unit Unit1;
 
@@ -18,6 +22,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  {$IFNDEF FPC}jpeg,{$ENDIF}
   Menus, Registry, sdl2, sdl2_mixer;
 
 type

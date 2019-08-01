@@ -1,3 +1,21 @@
+(*
+ * This file is part of the parachute_sdl program.
+ * https://github.com/delphiunderground/parachute_sdl
+ * Copyright (C) 2019 DelphiUnderground <delphiunderground@outlook.be>.
+ *
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version
+ * 3.0 as published by the Free Software Foundation.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this software; if not, see <https://www.gnu.org/licenses/>.
+ *)
+
 unit splash;
 
 interface
@@ -5,6 +23,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   {$ifdef linux}LCLIntf,{$ENDIF}
+  {$IFNDEF FPC}jpeg,{$ENDIF}
   sdl2, sdl2_mixer;
 
 type
@@ -14,18 +33,18 @@ type
   TSplashForm = class(TForm)
     btn_play: TButton;
     im_box_picture: TImage;
-    la_email: TLabel;
     la_game_title: TLabel;
     la_http: TLabel;
     la_ported1: TLabel;
     la_release_date: TLabel;
     la_ported: TLabel;
     la_version: TLabel;
+    la_ported2: TLabel;
     procedure btn_playClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure la_emailClick(Sender: TObject);
     procedure la_httpClick(Sender: TObject);
-  private
+   private
     { private declarations }
   public
     { public declarations }
@@ -39,6 +58,8 @@ implementation
 uses
   {$IFDEF FPC}
   LCLType,
+  {$ELSE}
+  shellapi,
   {$ENDIF}
   Windows,
   unit1;
@@ -50,23 +71,12 @@ const
 
 {$R *.dfm}
 
-procedure TSplashForm.la_emailClick(Sender:TObject);
-begin
-  {$IFDEF WINDOWS}
-  ShellExecute(Handle,'open','mailto:lucantignano@gmail.com',nil,'',SW_SHOWNORMAL);
-  {$ENDIF}
-  {$IFDEF LINUX}
-  OpenURL('mailto:lucantignano@gmail.com');
-  {$ENDIF}
-end;
-
 procedure TSplashForm.la_httpClick(Sender: TObject);
 begin
-  {$IFDEF WINDOWS}
-  ShellExecute(Handle,'open','http://www.madrigaldesign.it/sim/',nil,'',SW_SHOWNORMAL);
-  {$ENDIF}
-  {$IFDEF LINUX}
-  OpenURL('http://www.madrigaldesign.it/sim/');
+  {$IFNDEF LINUX}
+  ShellExecute(Handle,'open','https://github.com/delphiunderground',nil,'',SW_SHOWNORMAL);
+  {$ELSE}
+  OpenURL('https://github.com/delphiunderground');
   {$ENDIF}
 end;
 
@@ -114,6 +124,11 @@ begin
   if ((key=$31) or (key=VK_RETURN)) and btn_Play.enabled then btn_playClick(Sender);
   // 'ESC' key
   if key=VK_ESCAPE then Application.Terminate;
+end;
+
+procedure TSplashForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  CloseAction:=caFree;
 end;
 
 end.

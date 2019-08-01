@@ -1,38 +1,47 @@
 object AboutForm: TAboutForm
   Left = 0
-  Height = 256
   Top = 0
-  Width = 281
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'About the author...'
   ClientHeight = 256
   ClientWidth = 281
   Color = clBlack
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = True
   OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
   object la_mybirthdate1: TLabel
     Left = 16
-    Height = 14
     Top = 160
     Width = 89
+    Height = 14
     AutoSize = False
     Caption = 'My birth date:'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clSilver
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
   end
   object la_mybirthdate2: TLabel
     Left = 163
-    Height = 14
     Top = 160
     Width = 101
+    Height = 14
     Alignment = taRightJustify
     AutoSize = False
     Caption = 'Jan 14th, 1974'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
@@ -42,27 +51,30 @@ object AboutForm: TAboutForm
   end
   object la_mybirthplace1: TLabel
     Left = 16
-    Height = 14
     Top = 136
     Width = 81
+    Height = 14
     AutoSize = False
     Caption = 'My birthplace:'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clSilver
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
   end
   object la_mybirthplace2: TLabel
     Left = 163
-    Height = 14
     Top = 136
     Width = 101
+    Height = 14
     Alignment = taRightJustify
     AutoSize = False
     Caption = 'Sassari (Italia)'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
@@ -72,26 +84,29 @@ object AboutForm: TAboutForm
   end
   object la_myhobby1: TLabel
     Left = 16
-    Height = 15
     Top = 208
-    Width = 51
+    Width = 50
+    Height = 14
     Caption = 'My hobby:'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clSilver
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
   end
   object la_myhobby2: TLabel
     Left = 171
-    Height = 14
     Top = 208
     Width = 93
+    Height = 14
     Alignment = taRightJustify
     AutoSize = False
     Caption = '...guess it !'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
@@ -101,27 +116,30 @@ object AboutForm: TAboutForm
   end
   object la_myjob1: TLabel
     Left = 16
-    Height = 14
     Top = 184
     Width = 120
+    Height = 14
     AutoSize = False
     Caption = 'My current occupation:'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clSilver
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
   end
   object la_myjob2: TLabel
     Left = 139
-    Height = 14
     Top = 184
     Width = 125
+    Height = 14
     Alignment = taRightJustify
     AutoSize = False
     Caption = 'architectural engineer'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
@@ -131,27 +149,30 @@ object AboutForm: TAboutForm
   end
   object la_myname1: TLabel
     Left = 16
-    Height = 14
     Top = 112
     Width = 67
+    Height = 14
     AutoSize = False
     Caption = 'My real name:'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clSilver
     Font.Height = -11
     Font.Name = 'Arial'
+    Font.Style = []
     ParentColor = False
     ParentFont = False
   end
   object la_myname2: TLabel
     Left = 155
-    Height = 14
     Top = 112
     Width = 109
+    Height = 14
     Alignment = taRightJustify
     AutoSize = False
     Caption = 'Luca Antignano'
-    Font.CharSet = ANSI_CHARSET
+    Color = clBlack
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -11
     Font.Name = 'Arial'
@@ -161,11 +182,11 @@ object AboutForm: TAboutForm
   end
   object im_picture: TImage
     Left = 15
-    Height = 84
     Top = 17
     Width = 252
+    Height = 84
     Picture.Data = {
-      0A544A706567496D616765BE790000FFD8FFE000104A46494600010201012C01
+      0A544A504547496D616765BE790000FFD8FFE000104A46494600010201012C01
       2C0000FFC0001108005400FC03011100021101031101FFDB0084000101010101
       0101010101010101010101010101010101010101010101010101010101010202
       0201020202010102030202020203030301020303030203020203020101010101
@@ -1139,15 +1160,14 @@ object AboutForm: TAboutForm
       22A308A8462AC924924BB24AC92F43F199CE752529D49BA9393BB949B6DB7BB6
       DB6DBF36EE32A890A002800A002800A002800A002800A002800A002800A00280
       0A002800A002800A002800A002800A002800A002800A002800A002800A002800
-      A002800A002800A002803FFFD9
-    }
+      A002800A002800A002803FFFD9}
     Transparent = True
   end
   object be_picture: TBevel
     Left = 12
-    Height = 84
     Top = 17
     Width = 256
+    Height = 84
     Shape = bsFrame
     Style = bsRaised
   end
